@@ -1,10 +1,10 @@
 extends Node2D
 var playerSpeed = 2
-
+var screenSize
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	screenSize = get_viewport_rect().size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,3 +17,6 @@ func _process(delta):
 		position.x -= playerSpeed
 	if Input.is_action_pressed("Right"):
 		position.x += playerSpeed
+		
+	position.x = clamp(position.x, 0, screenSize.x)
+	position.y = clamp(position.y, 0, screenSize.y)
