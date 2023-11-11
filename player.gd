@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var playerSpeed = 3
+@export var playerSpeed = 100
 var screenSize
 signal hit
 
@@ -10,14 +10,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("Up"):
-		position.y -= playerSpeed
-	if Input.is_action_pressed("Down"):
-		position.y += playerSpeed
-	if Input.is_action_pressed("Left"):
-		position.x -= playerSpeed
-	if Input.is_action_pressed("Right"):
-		position.x += playerSpeed
+	var direction : Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
+	
+	if direction:
+		velocity = direction * playerSpeed
+	else:
+		velocity = Vector2.ZERO
+		
+	move_and_slide()
+	
+#	if Input.is_action_pressed("Up"):
+#		position.y -= playerSpeed
+#	if Input.is_action_pressed("Down"):
+#		position.y += playerSpeed
+#	if Input.is_action_pressed("Left"):
+#		position.x -= playerSpeed
+#	if Input.is_action_pressed("Right"):
+#		position.x += playerSpeed
 		
 	position.x = clamp(position.x, 0, screenSize.x)
 	position.y = clamp(position.y, 0, screenSize.y)

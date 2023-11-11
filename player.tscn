@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://player.gd" id="1_ks18h"]
 [ext_resource type="Texture2D" uid="uid://swp86fr5vfci" path="res://assets/Char one frame.png" id="2_nhjm6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0fqt"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1hd5h"]
+radius = 8.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -14,4 +15,5 @@ script = ExtResource("1_ks18h")
 texture = ExtResource("2_nhjm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_c0fqt")
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_1hd5h")
