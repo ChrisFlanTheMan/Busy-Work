@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 var playerSpeed = 2
 var screenSize
 

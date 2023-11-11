@@ -5,7 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47226"]
 size = Vector2(32, 32)
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="RigidBody2D"]
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.337255, 1, 1)
