@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0fqt"]
 size = Vector2(32, 32)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_ks18h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -38,6 +38,14 @@ Right={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Player"
+
+[physics]
+
+2d/default_gravity_vector=Vector2(0, 0)
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,6 +1,7 @@
-extends Area2D
-var playerSpeed = 2
+extends RigidBody2D
+var playerSpeed = 3
 var screenSize
+signal hit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
