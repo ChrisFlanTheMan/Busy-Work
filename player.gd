@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 var playerSpeed = 3
 var screenSize
 signal hit
