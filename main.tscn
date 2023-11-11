@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
-[ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
+[ext_resource type="PackedScene" uid="uid://i5s1htlb33w7" path="res://obstacle.tscn" id="3_c2a7k"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,4 +18,4 @@ position = Vector2(576, 320)
 position = Vector2(512, 376)
 
 [node name="Obstacle" parent="." instance=ExtResource("3_c2a7k")]
-position = Vector2(472, 312)
+position = Vector2(479, 337)

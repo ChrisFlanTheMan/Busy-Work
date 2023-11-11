@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtll4y64nibr6"]
+[gd_scene load_steps=5 format=3 uid="uid://dtll4y64nibr6"]
 
 [ext_resource type="Texture2D" uid="uid://cioa4k5ruxny7" path="res://icon.svg" id="1_qqw0f"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_ylmut"]
+[ext_resource type="Texture2D" uid="uid://cqorl5yqcu5wm" path="res://light.png" id="3_xgmvl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47226"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3ec2"]
+radius = 96.0
 
 [node name="Enemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -16,4 +17,12 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_qqw0f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_47226")
+shape = SubResource("CircleShape2D_t3ec2")
+disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -1.0842e-19)
+scale = Vector2(0.296875, 0.3125)
+color = Color(1, 1, 0.270588, 1)
+shadow_enabled = true
+texture = ExtResource("3_xgmvl")
