@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://y22n8hs3bqj7"]
+[gd_scene load_steps=3 format=3 uid="uid://y22n8hs3bqj7"]
 
 [ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
+[ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,3 +12,6 @@ color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_nrxhn")]
 position = Vector2(576, 320)
+
+[node name="Boss" parent="." instance=ExtResource("2_fl8u8")]
+position = Vector2(512, 376)

@@ -20,3 +20,6 @@ func _process(delta):
 		
 	position.x = clamp(position.x, 0, screenSize.x)
 	position.y = clamp(position.y, 0, screenSize.y)
+	
+func _on_body_entered(body):
+	print("Collision")
