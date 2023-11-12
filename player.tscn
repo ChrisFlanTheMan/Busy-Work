@@ -58,6 +58,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ExtResource("2_bwvvr")]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:texture:load_path")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/Char 1_leftrightpng.png-443ff474be61f961b8c7676eddfa10f4.ctex"]
+}
 
 [sub_resource type="Animation" id="Animation_nbuf2"]
 resource_name = "idle_down"
@@ -309,6 +321,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["res://.godot/imported/Char 1_leftrightpng.png-443ff474be61f961b8c7676eddfa10f4.ctex", ExtResource("2_bwvvr")]
+}
 
 [sub_resource type="Animation" id="Animation_v7f5v"]
 resource_name = "walk_left"
@@ -557,7 +581,7 @@ graph_offset = Vector2(145.08, 0)
 cull_mode = 1
 polygon = PackedVector2Array(5, 2, 5, 12, -5, 12, -5, 2)
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_ks18h")
 
@@ -582,7 +606,7 @@ advance_expression_base_node = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(-1.08737, 0.0207548)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 z_index = -10

@@ -6,6 +6,7 @@ var screenSize
 @onready var currentHealth: int = maxHealth
 
 signal hit
+signal onPlayerAdded(playerId)
 
 @export var playerId: int = 0
 @onready var animationTree : AnimationTree = $AnimationTree
@@ -14,6 +15,7 @@ signal hit
 func _ready():
 	screenSize = get_viewport_rect().size
 	animationTree.active = true
+	onPlayerAdded.emit(playerId)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
