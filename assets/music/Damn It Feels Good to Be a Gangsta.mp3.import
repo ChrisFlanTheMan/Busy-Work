@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8fu3rvpvmv4y"
+path="res://.godot/imported/Damn It Feels Good to Be a Gangsta.mp3-0198972ff0f28f1d20d1a4717a9b67ff.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Damn It Feels Good to Be a Gangsta.mp3"
+dest_files=["res://.godot/imported/Damn It Feels Good to Be a Gangsta.mp3-0198972ff0f28f1d20d1a4717a9b67ff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
