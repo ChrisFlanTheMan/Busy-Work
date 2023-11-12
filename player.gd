@@ -4,6 +4,8 @@ var direction : Vector2 = Vector2.ZERO
 var screenSize
 signal hit
 
+@export var playerId: int = 0
+
 @onready var animationTree : AnimationTree = $AnimationTree
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +18,7 @@ func _ready():
 func _process(delta):
 	update_animation_parameters()
 	
-	direction = Input.get_vector("Left", "Right", "Up", "Down").normalized()
+	direction = PlayerInput.getMovementDir(playerId)
 	
 	if direction:
 		velocity = direction * playerSpeed
