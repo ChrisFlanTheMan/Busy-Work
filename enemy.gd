@@ -37,5 +37,7 @@ func _physics_process(delta):
 					collider.addSuspicion(delta)
 					if (collider.suspicion > collider.MAX_SUSPICION):
 						self._boss_speech(false)
+						# dumb way of switching speech bubbles for now
+						hasCake = not hasCake
 						collider.position = spawnPosition.position
 						collider.suspicion = 0
