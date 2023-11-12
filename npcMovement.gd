@@ -7,6 +7,7 @@ var positions: Array = [
 	Vector2(100.0,100.0),
 	Vector2(100.0,500.0),
 	Vector2(900.0,500.0),
+	Vector2(600.0,250.0),
 	Vector2(900.0,100.0)
 ]
 
@@ -55,4 +56,5 @@ func _on_navigation_agent_2d_target_reached():
 		current_position_index = 0
 	else:
 		current_position_index = current_position_index + 1
+	await get_tree().create_timer(3.0).timeout
 	set_movement_target(positions[current_position_index])
