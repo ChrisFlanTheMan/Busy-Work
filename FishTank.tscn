@@ -66,8 +66,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="FishTank" type="AnimatedSprite2D"]
+z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_uxgm0")
 autoplay = "default"
-frame_progress = 0.500675
+frame = 5
+frame_progress = 0.951908
 speed_scale = 0.25

@@ -145,6 +145,8 @@ lock_rotation = true
 script = ExtResource("1_r3yio")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_qqsnn")
 animation = &"idle"
