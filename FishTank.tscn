@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dap5v8noxfv38"]
+
+[ext_resource type="Texture2D" uid="uid://d1jxch51noqvx" path="res://assets/Fish tank.png" id="1_dxik6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m210u"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwmmv"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mw6g"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q51ek"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_430oe"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b61c"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ggxa"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi4wf"]
+atlas = ExtResource("1_dxik6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxgm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m210u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwmmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mw6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q51ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_430oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b61c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ggxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi4wf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_uxgm0")
+autoplay = "default"
+frame_progress = 0.500675
+speed_scale = 0.25
