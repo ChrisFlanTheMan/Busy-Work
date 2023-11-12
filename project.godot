@@ -21,6 +21,9 @@ PlayerInput="*res://Autoloads/PlayerInput.gd"
 
 [display]
 
+window/size/viewport_width=720
+window/size/viewport_height=480
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://40fl6sudxlgv"]
+
+[ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_oopxn"]
+[ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
+[ext_resource type="Texture2D" uid="uid://damaw3e7sethe" path="res://assets/cubicle-wall.png" id="3_w53fw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myx26"]
+texture = ExtResource("3_w53fw")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_vjnu6"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_myx26")
+
+[node name="BasicLevel" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -56.0
+offset_top = 16.0
+offset_right = 720.0
+offset_bottom = 496.0
+color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_oopxn")]
+z_index = 2
+position = Vector2(576, 320)
+
+[node name="Boss" parent="." instance=ExtResource("2_holq4")]
+visible = false
+position = Vector2(512, 376)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_vjnu6")
+format = 2
+layer_0/name = "Walls"
+layer_0/tile_data = PackedInt32Array(1114143, 0, 0, 1179679, 0, 0, 1245215, 0, 0, 1310751, 0, 0, 1376287, 0, 0, 1441823, 0, 0, 1507359, 0, 0, 1572895, 0, 0, 1572896, 0, 0, 1572897, 0, 0, 1572898, 0, 0, 1572899, 0, 0, 1572900, 0, 0, 1572901, 0, 0, 1572902, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1441831, 0, 0, 1376295, 0, 0, 1310759, 0, 0, 1245223, 0, 0, 1179687, 0, 0, 1114151, 0, 0, 1114150, 0, 0, 1114149, 0, 0, 1114148, 0, 0, 1114147, 0, 0, 1114146, 0, 0, 1114145, 0, 0, 1114144, 0, 0)
