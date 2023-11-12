@@ -59,7 +59,17 @@ tracks/3/keys = {
 "values": [ExtResource("2_bwvvr")]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
 tracks/4/enabled = true
+tracks/4/path = NodePath("")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_nbuf2"]
 resource_name = "idle_down"
