@@ -7,6 +7,7 @@ var screenSize
 
 signal hit
 signal onPlayerAdded(playerId)
+signal healthChanged
 
 @export var playerId: int = 0
 @onready var animationTree : AnimationTree = $AnimationTree
@@ -52,4 +53,5 @@ func update_animation_parameters():
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
 		currentHealth -= 1
-		print_debug("currentHealth")
+		
+		healthChanged.emit(currentHealth)
