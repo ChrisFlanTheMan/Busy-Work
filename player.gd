@@ -11,6 +11,8 @@ signal onPlayerAdded(playerId)
 @export var playerId: int = 0
 @onready var animationTree : AnimationTree = $AnimationTree
 
+var interactableObject: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size
@@ -23,6 +25,12 @@ func _process(delta):
 	update_animation_parameters()
 	
 	direction = PlayerInput.getMovementDir(playerId)
+	
+	# Move collision shape location based on player input direction
+	$InteractableObjectArea2D/CollisionShape2D.global_position = global_position + direction * 15
+	
+	if PlayerInput.is_action_pressed(playerId, PlayerInput.Action.Use) and not interactableObject == null:
+		interactableObject.use()
 	
 	if direction:
 		velocity = direction * playerSpeed
@@ -53,3 +61,14 @@ func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
 		currentHealth -= 1
 		print_debug("currentHealth")
+
+
+func _on_interactable_object_area_2d_body_entered(body):
+	if body.is_in_group("InteractableObject"):
+		interactableObject = body
+		# print("Encountered new interactable object")
+
+
+func _on_interactable_object_area_2d_body_exited(body):
+	if body == interactableObject:
+		interactableObject = null
