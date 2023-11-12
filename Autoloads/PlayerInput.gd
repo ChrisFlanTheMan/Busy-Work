@@ -17,7 +17,7 @@ enum Axis {
 
 const KEYBOARD_MAPPING = {
 	Action: {
-		Action.Use: KEY_ENTER,
+		Action.Use: KEY_E,
 		Action.Back: KEY_ESCAPE,
 	},
 	Axis: {
