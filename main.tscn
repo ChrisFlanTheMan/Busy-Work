@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://y22n8hs3bqj7"]
+[gd_scene load_steps=7 format=3 uid="uid://y22n8hs3bqj7"]
 
 [ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
 [ext_resource type="PackedScene" path="res://npc.tscn" id="2_alj76"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
-[ext_resource type="PackedScene" path="res://obstacle.tscn" id="3_c2a7k"]
+[ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
+[ext_resource type="AudioStream" uid="uid://8fu3rvpvmv4y" path="res://assets/music/Damn It Feels Good to Be a Gangsta.mp3" id="5_d3lq4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_385ey"]
 vertices = PackedVector2Array(1, 4, 1151, 2, 1149, 644, 0, 647)
@@ -35,3 +36,7 @@ position = Vector2(128, 123)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_385ey")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_d3lq4")
+autoplay = true
