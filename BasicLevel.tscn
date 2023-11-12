@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://bdn2xyy8gt60p" path="res://assets/Basic floor.png" id="2_ioqxd"]
 [ext_resource type="Texture2D" uid="uid://btvu0rlr7nd25" path="res://assets/Plant Blockage 1 small.png" id="3_i054n"]
 [ext_resource type="Texture2D" uid="uid://b5jnpgy8y4fsk" path="res://assets/Plant Blockage 2 small.png" id="4_huv2h"]
-[ext_resource type="PackedScene" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
 [ext_resource type="Texture2D" uid="uid://bxnoixkfuyw7b" path="res://assets/Cubicles 4.png" id="4_xqcsy"]
-[ext_resource type="PackedScene" path="res://npc.tscn" id="5_ql6i5"]
+[ext_resource type="PackedScene" uid="uid://bd4lrl3v2q2ey" path="res://npc.tscn" id="5_ql6i5"]
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 [ext_resource type="Texture2D" uid="uid://7myahnesrfgk" path="res://assets/Water Cooler small.png" id="5_v2df3"]
 [ext_resource type="Texture2D" uid="uid://deang3rve6ua5" path="res://assets/s ofa.png" id="6_boiow"]
-[ext_resource type="PackedScene" uid="uid://c1ked6845cln8" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
+[ext_resource type="PackedScene" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
 vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
@@ -72,11 +72,10 @@ texture = ExtResource("2_ioqxd")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpgs0"]
 texture = ExtResource("3_i054n")
 1:0/0 = 0
-1:0/0/y_sort_origin = 8
+1:0/0/y_sort_origin = 16
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
-1:1/0/y_sort_origin = -8
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.3125, -8, 8, 8, 8, 8, -0.3125)
@@ -84,11 +83,10 @@ texture = ExtResource("3_i054n")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho1x8"]
 texture = ExtResource("4_huv2h")
 1:0/0 = 0
-1:0/0/y_sort_origin = 8
+1:0/0/y_sort_origin = 16
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
-1:1/0/y_sort_origin = -8
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.1875, -8, 8, 8, 8, 8, 0)
@@ -96,22 +94,25 @@ texture = ExtResource("4_huv2h")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7kun"]
 texture = ExtResource("5_v2df3")
 1:0/0 = 0
+1:0/0/y_sort_origin = 16
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -1.9375, -7, 8, 7.25, 8, 7.125, -1.9375)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g341s"]
 texture = ExtResource("6_boiow")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_welg0"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -364,6 +365,8 @@ position = Vector2(331, 66)
 scale = Vector2(-98.8184, 647.068)
 
 [node name="Cake" parent="." instance=ExtResource("4_kedwi")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(347, 452)
 
 [node name="npc" parent="." instance=ExtResource("5_ql6i5")]

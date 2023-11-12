@@ -579,7 +579,7 @@ graph_offset = Vector2(145.08, 0)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8je2a"]
 cull_mode = 1
-polygon = PackedVector2Array(5, 2, 5, 12, -5, 12, -5, 2)
+polygon = PackedVector2Array(5, -5, 5, 5, -5, 5, -5, -5)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
