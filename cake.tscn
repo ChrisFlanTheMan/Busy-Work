@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbuv6ki8mnflh"]
+[gd_scene load_steps=10 format=3 uid="uid://cbuv6ki8mnflh"]
 
+[ext_resource type="Script" path="res://cake.gd" id="1_38gjb"]
 [ext_resource type="Texture2D" uid="uid://bunik18wv2u0" path="res://assets/cakespritesheet.png" id="1_aghfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rycpi"]
@@ -45,9 +46,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cake" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hs7i2"]
+radius = 14.0
+
+[node name="Cake" type="Area2D"]
+script = ExtResource("1_38gjb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jtx5j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.10543e-15, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hs7i2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
