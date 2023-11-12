@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends npcMovement
 
 
 # Called when the node enters the scene tree for the first time.
