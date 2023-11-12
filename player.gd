@@ -2,10 +2,12 @@ extends CharacterBody2D
 @export var playerSpeed = 100
 var direction : Vector2 = Vector2.ZERO
 var screenSize
+@export var maxHealth = 3
+@onready var currentHealth: int = maxHealth
+
 signal hit
 
 @export var playerId: int = 0
-
 @onready var animationTree : AnimationTree = $AnimationTree
 
 # Called when the node enters the scene tree for the first time.
@@ -45,3 +47,7 @@ func update_animation_parameters():
 		animationTree["parameters/Idle/blend_position"] = direction
 		animationTree["parameters/Walk/blend_position"] = direction
 	
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		currentHealth -= 1
+		print_debug("currentHealth")

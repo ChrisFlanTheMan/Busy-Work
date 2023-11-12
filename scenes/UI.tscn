@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn77aqsp8qkh0"]
+[gd_scene load_steps=3 format=3 uid="uid://dn77aqsp8qkh0"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_r3cfw"]
+[ext_resource type="PackedScene" uid="uid://c1ked6845cln8" path="res://scenes/heartsContainer.tscn" id="2_hi4mw"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -31,4 +32,16 @@ size_flags_vertical = 0
 layout_mode = 2
 
 [node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HeartsContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+layout_mode = 2
+
+[node name="HeartsContainer2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+layout_mode = 2
+
+[node name="HeartsContainer3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+layout_mode = 2
+
+[node name="HeartsContainer4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
 layout_mode = 2
