@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" path="res://npc.tscn" id="5_ql6i5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
-vertices = PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)
+vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)])
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5mgly"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
