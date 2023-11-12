@@ -357,6 +357,7 @@ layer_0/tile_data = PackedInt32Array(65549, 1, 0, 131085, 1, 1, 65550, 65537, 0,
 
 [node name="WallTileMap" type="TileMap" parent="."]
 light_mask = 3
+z_index = 1
 y_sort_enabled = true
 tile_set = SubResource("TileSet_vjnu6")
 format = 2
