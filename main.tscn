@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://y22n8hs3bqj7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2uy7a"]
-[ext_resource type="PackedScene" uid="uid://q7ft7m60wbvk" path="res://npc.tscn" id="2_alj76"]
+[ext_resource type="PackedScene" uid="uid://dco100mfa53h5" path="res://npc.tscn" id="2_alj76"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
-[ext_resource type="PackedScene" uid="uid://i5s1htlb33w7" path="res://obstacle.tscn" id="3_c2a7k"]
+[ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
 [ext_resource type="AudioStream" uid="uid://8fu3rvpvmv4y" path="res://assets/music/Damn It Feels Good to Be a Gangsta.mp3" id="5_d3lq4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_385ey"]
