@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dy2sgfvy4jpjl"]
+[gd_scene load_steps=30 format=3 uid="uid://dy2sgfvy4jpjl"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ks18h"]
 [ext_resource type="Texture2D" uid="uid://cncuhqfqplcs5" path="res://assets/Char 1_frontback.png" id="2_bwvvr"]
@@ -57,6 +57,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_bwvvr")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:texture:load_path")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/Char 1_leftrightpng.png-443ff474be61f961b8c7676eddfa10f4.ctex"]
 }
 
 [sub_resource type="Animation" id="Animation_nbuf2"]
@@ -309,6 +321,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["res://.godot/imported/Char 1_leftrightpng.png-443ff474be61f961b8c7676eddfa10f4.ctex", ExtResource("2_bwvvr")]
+}
 
 [sub_resource type="Animation" id="Animation_v7f5v"]
 resource_name = "walk_left"
@@ -557,11 +581,9 @@ graph_offset = Vector2(145.08, 0)
 cull_mode = 1
 polygon = PackedVector2Array(5, 2, 5, 12, -5, 12, -5, 2)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6plkc"]
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 3
-motion_mode = 1
+	motion_mode = 1
 script = ExtResource("1_ks18h")
 
 [node name="Body" type="Sprite2D" parent="."]
@@ -585,18 +607,9 @@ advance_expression_base_node = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(-1.08737, 0.0207548)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 z_index = -10
 y_sort_enabled = true
 occluder = SubResource("OccluderPolygon2D_8je2a")
-
-[node name="InteractableObjectArea2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableObjectArea2D"]
-position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_6plkc")
-
-[connection signal="body_entered" from="InteractableObjectArea2D" to="." method="_on_interactable_object_area_2d_body_entered"]
-[connection signal="body_exited" from="InteractableObjectArea2D" to="." method="_on_interactable_object_area_2d_body_exited"]

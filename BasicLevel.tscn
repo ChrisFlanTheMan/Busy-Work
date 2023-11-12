@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://40fl6sudxlgv"]
+[gd_scene load_steps=41 format=3 uid="uid://40fl6sudxlgv"]
 
 [ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 [ext_resource type="Texture2D" uid="uid://7myahnesrfgk" path="res://assets/Water Cooler small.png" id="5_v2df3"]
 [ext_resource type="Texture2D" uid="uid://deang3rve6ua5" path="res://assets/s ofa.png" id="6_boiow"]
-[ext_resource type="PackedScene" uid="uid://c1ked6845cln8" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
+[ext_resource type="PackedScene" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
 vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
@@ -69,6 +69,9 @@ texture = ExtResource("2_ioqxd")
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wa8a4"]
+polygon = PackedVector2Array(-7.1875, 0.9375, 6.75, 1, 7.0625, 8, -7.0625, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpgs0"]
 texture = ExtResource("3_i054n")
 1:0/0 = 0
@@ -76,9 +79,13 @@ texture = ExtResource("3_i054n")
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wa8a4")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.3125, -8, 8, 8, 8, 8, -0.3125)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1x6rl"]
+polygon = PackedVector2Array(-7.0625, 1.125, 6.875, 1.1875, 7.0625, 8, -6.75, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho1x8"]
 texture = ExtResource("4_huv2h")
@@ -87,9 +94,13 @@ texture = ExtResource("4_huv2h")
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1x6rl")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.1875, -8, 8, 8, 8, 8, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_up7rh"]
+polygon = PackedVector2Array(-6.0625, -0.5, 6, -0.5625, 6, 8, -5.875, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7kun"]
 texture = ExtResource("5_v2df3")
@@ -99,17 +110,26 @@ texture = ExtResource("5_v2df3")
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_up7rh")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -1.9375, -7, 8, 7.25, 8, 7.125, -1.9375)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_41jxr"]
+polygon = PackedVector2Array(-3, -8, 8, -8, 8, 8, -4.25, 8, -8, 2.875, -8, -1.25, -4.8125, -3.3125)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xtlxd"]
+polygon = PackedVector2Array(-8, -8, 2.125, -8, 4.4375, -4.125, 8, -0.8125, 5.4375, 5.6875, 4.75, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g341s"]
 texture = ExtResource("6_boiow")
 0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_41jxr")
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xtlxd")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -337,6 +357,7 @@ layer_0/tile_data = PackedInt32Array(65549, 1, 0, 131085, 1, 1, 65550, 65537, 0,
 
 [node name="WallTileMap" type="TileMap" parent="."]
 light_mask = 3
+z_index = 1
 y_sort_enabled = true
 tile_set = SubResource("TileSet_vjnu6")
 format = 2
@@ -373,7 +394,7 @@ position = Vector2(243, 258)
 movement_position_markers_tag = "npc_position_point"
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("spawnPosition") instance=ExtResource("2_holq4")]
-position = Vector2(636, 433)
+position = Vector2(612, 426)
 spawnPosition = NodePath("../SpawnPoint")
 movement_position_markers_tag = "boss_position_point"
 

@@ -21,3 +21,12 @@ func setMaxHearts(max: int):
 	for i in range(max):
 		var heart = HeartGUIClass.instantiate()
 		add_child(heart)
+		
+#func updateHearts(currentHearts: int):
+#	var hearts = get_children()
+#
+#	for i in range(currentHealth):
+#		hearts[i].show()
+#
+#	for i in range(currentHealth, hearts.size()):
+#		hearts[i].update(false)
