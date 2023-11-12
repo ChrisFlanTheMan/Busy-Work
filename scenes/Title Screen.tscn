@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://dftf0rbmkuuw8"]
+
+[ext_resource type="Texture2D" uid="uid://cqky5i21i07ua" path="res://assets/Title.png" id="1_17m5f"]
+[ext_resource type="Script" path="res://scenes/titleNextScene.gd" id="1_prmnm"]
+[ext_resource type="Script" path="res://scenes/RotateTitle.gd" id="3_rd4yw"]
+
+[sub_resource type="Animation" id="Animation_glkca"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_guf28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_au8ic"]
+resource_name = "Title Wag"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_66mau"]
+_data = {
+"Fade In": SubResource("Animation_glkca"),
+"RESET": SubResource("Animation_guf28"),
+"Title Wag": SubResource("Animation_au8ic")
+}
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource("1_prmnm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 749.0
+offset_bottom = 505.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(385, 240.5)
+scale = Vector2(5.1625, 4.65)
+texture = ExtResource("1_17m5f")
+script = ExtResource("3_rd4yw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 256.0
+offset_top = 403.0
+offset_right = 656.0
+offset_bottom = 485.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+text = "[Press Space to Start]"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 764.0
+offset_bottom = 505.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_66mau")
+}
