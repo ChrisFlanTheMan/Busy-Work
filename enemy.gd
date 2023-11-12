@@ -1,4 +1,4 @@
-extends npcMovement
+extends "res://npcMovement.gd"
 
 @export var spawnPosition: Marker2D
 

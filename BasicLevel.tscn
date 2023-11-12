@@ -1,16 +1,17 @@
-[gd_scene load_steps=35 format=3 uid="uid://40fl6sudxlgv"]
+[gd_scene load_steps=36 format=3 uid="uid://40fl6sudxlgv"]
 
 [ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
 [ext_resource type="Texture2D" uid="uid://bdn2xyy8gt60p" path="res://assets/Basic floor.png" id="2_ioqxd"]
 [ext_resource type="Texture2D" uid="uid://btvu0rlr7nd25" path="res://assets/Plant Blockage 1 small.png" id="3_i054n"]
 [ext_resource type="Texture2D" uid="uid://b5jnpgy8y4fsk" path="res://assets/Plant Blockage 2 small.png" id="4_huv2h"]
-[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" path="res://cake.tscn" id="4_kedwi"]
 [ext_resource type="Texture2D" uid="uid://bxnoixkfuyw7b" path="res://assets/Cubicles 4.png" id="4_xqcsy"]
-[ext_resource type="PackedScene" uid="uid://bd4lrl3v2q2ey" path="res://npc.tscn" id="5_ql6i5"]
+[ext_resource type="PackedScene" path="res://npc.tscn" id="5_ql6i5"]
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 [ext_resource type="Texture2D" uid="uid://7myahnesrfgk" path="res://assets/Water Cooler small.png" id="5_v2df3"]
 [ext_resource type="Texture2D" uid="uid://deang3rve6ua5" path="res://assets/s ofa.png" id="6_boiow"]
+[ext_resource type="PackedScene" uid="uid://c1ked6845cln8" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
 vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
@@ -408,3 +409,7 @@ position = Vector2(414, 229)
 
 [node name="NPCPoint4" type="Marker2D" parent="NpcMovementPoints" groups=["npc_position_point"]]
 position = Vector2(204, 231)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("12_bjfi4")]

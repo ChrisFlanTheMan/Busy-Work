@@ -38,10 +38,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="HeartsContainer2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+visible = false
 layout_mode = 2
 
 [node name="HeartsContainer3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+visible = false
 layout_mode = 2
 
 [node name="HeartsContainer4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_hi4mw")]
+visible = false
 layout_mode = 2

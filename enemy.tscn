@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtll4y64nibr6"]
+[gd_scene load_steps=6 format=3 uid="uid://dtll4y64nibr6"]
 
 [ext_resource type="Texture2D" uid="uid://cioa4k5ruxny7" path="res://icon.svg" id="1_qqw0f"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_ylmut"]
 [ext_resource type="Texture2D" uid="uid://cqorl5yqcu5wm" path="res://light.png" id="3_xgmvl"]
-[ext_resource type="Texture2D" uid="uid://bsry5lg3b0dn7" path="res://assets/backtowork.png" id="4_1pvip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bwnp"]
 size = Vector2(32, 32)
@@ -12,7 +11,6 @@ size = Vector2(32, 32)
 radius = 96.0
 
 [node name="Enemy" type="CharacterBody2D"]
-z_index = 3
 script = ExtResource("1_ylmut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,7 +29,7 @@ shape = SubResource("CircleShape2D_t3ec2")
 [node name="PointLight2D-Layer1" type="PointLight2D" parent="Area2D"]
 y_sort_enabled = true
 position = Vector2(0, -1.0842e-19)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 color = Color(1, 1, 0.270588, 1)
 shadow_enabled = true
 texture = ExtResource("3_xgmvl")
@@ -39,20 +37,12 @@ texture = ExtResource("3_xgmvl")
 [node name="PointLight2D-Layer2" type="PointLight2D" parent="Area2D"]
 y_sort_enabled = true
 position = Vector2(0, -1.42301e-19)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 color = Color(1, 1, 0.270588, 1)
 range_item_cull_mask = 2
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("3_xgmvl")
-
-[node name="backtowork" type="Sprite2D" parent="Area2D"]
-position = Vector2(39, -30)
-texture = ExtResource("4_1pvip")
-
-[node name="nocake" type="Sprite2D" parent="Area2D"]
-visible = false
-position = Vector2(39, -30)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
