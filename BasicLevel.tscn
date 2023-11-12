@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://behc0vl57r8uj"]
+[gd_scene load_steps=9 format=3 uid="uid://40fl6sudxlgv"]
 
-[ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_oopxn"]
+[ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
 [ext_resource type="Texture2D" uid="uid://damaw3e7sethe" path="res://assets/cubicle-wall.png" id="3_w53fw"]
+[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" path="res://npc.tscn" id="5_ql6i5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
+vertices = PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myx26"]
 texture = ExtResource("3_w53fw")
@@ -17,16 +24,17 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_myx26")
 
 [node name="BasicLevel" type="Node2D"]
+script = ExtResource("1_1brv6")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(552, 272)
+navigation_polygon = SubResource("NavigationPolygon_m2pew")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 8.0
 offset_right = 712.0
 offset_bottom = 480.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
-
-[node name="Player" parent="." instance=ExtResource("1_oopxn")]
-z_index = 2
-position = Vector2(360, 48)
 
 [node name="Boss" parent="." instance=ExtResource("2_holq4")]
 visible = false
@@ -37,3 +45,12 @@ tile_set = SubResource("TileSet_vjnu6")
 format = 2
 layer_0/name = "Walls"
 layer_0/tile_data = PackedInt32Array(1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1638406, 0, 0, 1703942, 0, 0, 1769478, 0, 0, 1835014, 0, 0, 1900550, 0, 0, 1572870, 0, 0, 1507334, 0, 0, 1441798, 0, 0, 262183, 0, 0, 327719, 0, 0, 393255, 0, 0, 458791, 0, 0, 524327, 0, 0, 589863, 0, 0, 655399, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 13, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 327710, 0, 0, 262174, 0, 0, 196638, 0, 0, 131102, 0, 0, 65566, 0, 0, 30, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, 917515, 0, 0, 983051, 0, 0, 1048587, 0, 0, 1114123, 0, 0, 1179659, 0, 0, 1245195, 0, 0, 1310731, 0, 0, 1310730, 0, 0, 1572877, 0, 0, 1572878, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1572881, 0, 0, 1572882, 0, 0, 1572883, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572886, 0, 0, 1245205, 0, 0, 1245204, 0, 0, 1179668, 0, 0, 1114132, 0, 0, 1048596, 0, 0, 983060, 0, 0, 917524, 0, 0, 851988, 0, 0, 786452, 0, 0, 720916, 0, 0, 655381, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 1048605, 0, 0, 1114141, 0, 0, 1179677, 0, 0, 1245213, 0, 0, 1310749, 0, 0, 1376285, 0, 0, 1441821, 0, 0, 1507357, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 35, 0, 0, 65571, 0, 0, 131107, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 1507364, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1507368, 0, 0, 1507369, 0, 0, 1507370, 0, 0, 1507371, 0, 0, 1769508, 0, 0, 1835044, 0, 0, 1900580, 0, 0, 1900581, 0, 0, 1900585, 0, 0, 1900584, 0, 0, 1900583, 0, 0, 1900582, 0, 0, 1900586, 0, 0, 1900587, 0, 0, 1835051, 0, 0, 1769515, 0, 0, 1703979, 0, 0, 1638443, 0, 0, 1572907, 0, 0, 1769493, 0, 0, 1835029, 0, 0, 1900565, 0, 0)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(360, 48)
+
+[node name="Cake" parent="." instance=ExtResource("4_kedwi")]
+position = Vector2(632, 416)
+
+[node name="npc" parent="." instance=ExtResource("5_ql6i5")]
+position = Vector2(552, 272)

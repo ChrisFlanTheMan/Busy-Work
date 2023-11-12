@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbuv6ki8mnflh"]
+
+[ext_resource type="Texture2D" uid="uid://bunik18wv2u0" path="res://assets/cakespritesheet.png" id="1_aghfp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycpi"]
+atlas = ExtResource("1_aghfp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpdqe"]
+atlas = ExtResource("1_aghfp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_080dm"]
+atlas = ExtResource("1_aghfp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8m6h"]
+atlas = ExtResource("1_aghfp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jlrm"]
+atlas = ExtResource("1_aghfp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtx5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpdqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_080dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8m6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jlrm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cake" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jtx5j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
