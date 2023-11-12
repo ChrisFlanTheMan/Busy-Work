@@ -1,29 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://y22n8hs3bqj7"]
 
-[ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
+[ext_resource type="Script" path="res://main.gd" id="1_2uy7a"]
 [ext_resource type="PackedScene" path="res://npc.tscn" id="2_alj76"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
 [ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
 [ext_resource type="AudioStream" uid="uid://8fu3rvpvmv4y" path="res://assets/music/Damn It Feels Good to Be a Gangsta.mp3" id="5_d3lq4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_385ey"]
-vertices = PackedVector2Array(1, 4, 1151, 2, 1149, 644, 0, 647)
+vertices = PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1, 4, 1151, 2, 1149, 644, 0, 647)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)])
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2uy7a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
-
-[node name="Player1" parent="." instance=ExtResource("1_nrxhn")]
-position = Vector2(688, 320)
-
-[node name="Player2" parent="." instance=ExtResource("1_nrxhn")]
-position = Vector2(776, 367)
-playerId = 1
 
 [node name="Boss" parent="." instance=ExtResource("2_fl8u8")]
 position = Vector2(512, 376)

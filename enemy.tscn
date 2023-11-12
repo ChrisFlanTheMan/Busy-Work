@@ -21,6 +21,7 @@ shape = SubResource("CircleShape2D_t3ec2")
 disabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -1.0842e-19)
 scale = Vector2(0.296875, 0.3125)
 color = Color(1, 1, 0.270588, 1)

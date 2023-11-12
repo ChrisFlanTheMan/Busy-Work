@@ -59,6 +59,8 @@ class GamepadPlayerMapping extends PlayerMapping:
 		controlType = ControlType.Gamepad
 		deviceId = device
 
+signal playerAdded(playerId: int)
+
 const DEADZONE = 0.2
 const MAX_PLAYERS := 4
 var playerSlots: Array[PlayerMapping] = []
@@ -121,6 +123,7 @@ func _unhandled_input(event):
 					hasKbPlayer = true
 			if not hasKbPlayer:
 				playerSlots.push_back(KeyboardPlayerMapping.new())
+				playerAdded.emit(len(playerSlots) - 1)
 		if event is InputEventJoypadButton:
 			# add new joypad player
 			var hasDevicePlayer = false
@@ -130,3 +133,4 @@ func _unhandled_input(event):
 						hasDevicePlayer = true
 			if not hasDevicePlayer:
 				playerSlots.push_back(GamepadPlayerMapping.new(event.device))
+				playerAdded.emit(len(playerSlots) - 1)
