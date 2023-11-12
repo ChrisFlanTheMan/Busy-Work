@@ -373,7 +373,7 @@ position = Vector2(243, 258)
 movement_position_markers_tag = "npc_position_point"
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("spawnPosition") instance=ExtResource("2_holq4")]
-position = Vector2(636, 433)
+position = Vector2(612, 426)
 spawnPosition = NodePath("../SpawnPoint")
 movement_position_markers_tag = "boss_position_point"
 
