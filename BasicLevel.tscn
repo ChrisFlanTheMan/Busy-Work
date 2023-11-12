@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://behc0vl57r8uj"]
+[gd_scene load_steps=28 format=3 uid="uid://40fl6sudxlgv"]
 
 [ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
+[ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
 [ext_resource type="Texture2D" uid="uid://damaw3e7sethe" path="res://assets/cubicle-wall.png" id="3_w53fw"]
-[ext_resource type="PackedScene" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
 [ext_resource type="Texture2D" uid="uid://bxnoixkfuyw7b" path="res://assets/Cubicles 4.png" id="4_xqcsy"]
-[ext_resource type="PackedScene" uid="uid://dco100mfa53h5" path="res://npc.tscn" id="5_ql6i5"]
+[ext_resource type="PackedScene" uid="uid://bd4lrl3v2q2ey" path="res://npc.tscn" id="5_ql6i5"]
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
@@ -244,7 +245,24 @@ scale = Vector2(-98.8184, 647.068)
 position = Vector2(632, 416)
 
 [node name="npc" parent="." instance=ExtResource("5_ql6i5")]
-position = Vector2(552, 272)
+position = Vector2(243, 258)
+movement_position_markers_tag = "npc_position_point"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(538, 202)
+[node name="BossPoint1" type="Marker2D" parent="." groups=["boss_position_point"]]
+position = Vector2(631, 235)
+
+[node name="BossPoint2" type="Marker2D" parent="." groups=["boss_position_point"]]
+position = Vector2(512, 376)
+
+[node name="NPCPoint1" type="Marker2D" parent="." groups=["npc_position_point"]]
+position = Vector2(182, 352)
+
+[node name="NPCPoint2" type="Marker2D" parent="." groups=["npc_position_point"]]
+position = Vector2(364, 359)
+
+[node name="NPCPoint3" type="Marker2D" parent="." groups=["npc_position_point"]]
+position = Vector2(261, 280)
+
+[node name="Enemy" parent="." instance=ExtResource("2_holq4")]
+position = Vector2(553, 337)
+movement_position_markers_tag = "boss_position_point"
