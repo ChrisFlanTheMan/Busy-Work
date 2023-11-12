@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwxfqiua427qd"]
+
+[ext_resource type="Script" path="res://InteractableObject.gd" id="1_y2ark"]
+[ext_resource type="Texture2D" uid="uid://bhd1oyhm68n2" path="res://assets/filecabinetspritesheet.png" id="2_art8q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usa5q"]
+atlas = ExtResource("2_art8q")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apvls"]
+atlas = ExtResource("2_art8q")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xjx0"]
+atlas = ExtResource("2_art8q")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwnl7"]
+atlas = ExtResource("2_art8q")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmn7j"]
+atlas = ExtResource("2_art8q")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwadq"]
+atlas = ExtResource("2_art8q")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d73g7"]
+atlas = ExtResource("2_art8q")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqsnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usa5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apvls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xjx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwnl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmn7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwadq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d73g7")
+}],
+"loop": false,
+"name": &"active",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xccaw"]
+size = Vector2(16, 26)
+
+[node name="filecabinet" type="RigidBody2D" groups=["InteractableObject"]]
+z_index = 1
+gravity_scale = 2.66454e-15
+lock_rotation = true
+script = ExtResource("1_y2ark")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(8, 0)
+sprite_frames = SubResource("SpriteFrames_qqsnn")
+animation = &"active"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_xccaw")

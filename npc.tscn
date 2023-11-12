@@ -1,20 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd4lrl3v2q2ey"]
 
 [ext_resource type="Script" path="res://npcMovement.gd" id="1_2db6n"]
-[ext_resource type="Texture2D" uid="uid://dslghhy6f3s03" path="res://assets/NPC_frontback.png" id="2_et3sr"]
+[ext_resource type="Texture2D" uid="uid://41mitahrycx1" path="res://assets/NPC_frontback.png" id="2_et3sr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsetq"]
+radius = 7.0
+height = 14.0
 
 [node name="npc" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_2db6n")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 19)
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_tsetq")
 
 [node name="Body" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 texture = ExtResource("2_et3sr")
 hframes = 4
 vframes = 2

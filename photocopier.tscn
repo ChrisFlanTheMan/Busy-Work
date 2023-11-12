@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://diq8gvptjf7tj"]
 
-[ext_resource type="Script" path="res://photocopier.gd" id="1_r3yio"]
+[ext_resource type="Script" path="res://InteractableObject.gd" id="1_r3yio"]
 [ext_resource type="Texture2D" uid="uid://dw2oqwr3n2eiu" path="res://assets/photocopierspritesheet.png" id="2_wiive"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiq6m"]
