@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var movement_speed: float = 200.0
 
-var current_position_index: int = 0
+@export var current_position_index: int = 0
 @export var movement_position_markers_tag: String
 var movement_position_markers: Array = []
 
