@@ -1,6 +1,5 @@
-extends CharacterBody2D
-
 class_name npcMovement
+extends CharacterBody2D
 
 var movement_speed: float = 200.0
 
