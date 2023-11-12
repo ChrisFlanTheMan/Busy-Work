@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://y22n8hs3bqj7"]
 
-[ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
+[ext_resource type="Script" path="res://main.gd" id="1_2uy7a"]
 [ext_resource type="PackedScene" path="res://npc.tscn" id="2_alj76"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
 [ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
@@ -13,18 +13,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 720, 0, 720, 480,
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_2uy7a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
-
-[node name="Player1" parent="." instance=ExtResource("1_nrxhn")]
-position = Vector2(336, 184)
-
-[node name="Player2" parent="." instance=ExtResource("1_nrxhn")]
-position = Vector2(408, 192)
-playerId = 1
 
 [node name="Boss" parent="." instance=ExtResource("2_fl8u8")]
 position = Vector2(512, 376)
