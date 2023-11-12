@@ -5,9 +5,9 @@ var movement_speed: float = 200.0
 var current_position_index: int = 0
 var positions: Array = [
 	Vector2(100.0,100.0),
-	Vector2(300.0,200.0),
-	Vector2(400.0,100.0),
-	Vector2(500.0,300.0)
+	Vector2(100.0,500.0),
+	Vector2(900.0,500.0),
+	Vector2(900.0,100.0)
 ]
 
 var movement_target_position: Vector2 = positions[current_position_index]
