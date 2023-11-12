@@ -1,15 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://40fl6sudxlgv"]
+[gd_scene load_steps=9 format=3 uid="uid://dt5v7vg3an3wp"]
 
 [ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
 [ext_resource type="Texture2D" uid="uid://damaw3e7sethe" path="res://assets/cubicle-wall.png" id="3_w53fw"]
-[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
-[ext_resource type="PackedScene" path="res://npc.tscn" id="5_ql6i5"]
+[ext_resource type="PackedScene" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" uid="uid://q7ft7m60wbvk" path="res://npc.tscn" id="5_ql6i5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
-vertices = PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)
+vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 720, 0, 720, 480, 0, 480)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myx26"]
 texture = ExtResource("3_w53fw")
