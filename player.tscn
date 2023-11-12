@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dy2sgfvy4jpjl"]
+[gd_scene load_steps=30 format=3 uid="uid://dy2sgfvy4jpjl"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ks18h"]
 [ext_resource type="Texture2D" uid="uid://cncuhqfqplcs5" path="res://assets/Char 1_frontback.png" id="2_bwvvr"]
@@ -553,6 +553,10 @@ states/Walk/position = Vector2(526, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_0wqlr"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_wwfhr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_fojrj")]
 graph_offset = Vector2(145.08, 0)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8je2a"]
+cull_mode = 1
+polygon = PackedVector2Array(5, 2, 5, 12, -5, 12, -5, 2)
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_ks18h")
@@ -579,3 +583,8 @@ parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+z_index = -10
+y_sort_enabled = true
+occluder = SubResource("OccluderPolygon2D_8je2a")

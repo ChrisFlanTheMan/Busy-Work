@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy2sgfvy4jpjl" path="res://player.tscn" id="1_nrxhn"]
 [ext_resource type="PackedScene" path="res://npc.tscn" id="2_alj76"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_fl8u8"]
-[ext_resource type="PackedScene" uid="uid://dqq2qbshk6noj" path="res://obstacle.tscn" id="3_c2a7k"]
+[ext_resource type="PackedScene" uid="uid://b6k4q4x4aqkl" path="res://obstacle.tscn" id="3_c2a7k"]
 [ext_resource type="AudioStream" uid="uid://8fu3rvpvmv4y" path="res://assets/music/Damn It Feels Good to Be a Gangsta.mp3" id="5_d3lq4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_385ey"]
@@ -12,6 +12,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1, 4, 1151, 2, 1149, 644, 0, 647)])
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0

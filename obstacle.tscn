@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://i5s1htlb33w7"]
+[gd_scene load_steps=5 format=3 uid="uid://b6k4q4x4aqkl"]
 
 [sub_resource type="Gradient" id="Gradient_bdf0k"]
 
@@ -9,6 +9,7 @@ gradient = SubResource("Gradient_bdf0k")
 size = Vector2(32, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ntutt"]
+cull_mode = 1
 polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
 [node name="Obstacle" type="RigidBody2D"]
@@ -21,4 +22,6 @@ texture = SubResource("GradientTexture2D_gdyke")
 shape = SubResource("RectangleShape2D_n7t0v")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+z_index = -10
+y_sort_enabled = true
 occluder = SubResource("OccluderPolygon2D_ntutt")
