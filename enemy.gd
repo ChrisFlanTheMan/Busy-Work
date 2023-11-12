@@ -2,6 +2,21 @@ extends npcMovement
 
 @export var spawnPosition: Marker2D
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
-		body.position = spawnPosition.position
+@onready var area2D = $Area2D;
+
+var raycast: RayCast2D
+
+func _ready():
+	raycast = RayCast2D.new()
+	add_child(raycast)
+
+func _physics_process(delta):
+	var nodes = area2D.get_overlapping_bodies()
+	for node in nodes:
+		if node.is_in_group("Player"):
+			raycast.target_position = node.position - position
+
+			if raycast.is_colliding():
+				var collider = raycast.get_collider()
+				if (collider.is_in_group("Player")):
+					collider.position = spawnPosition.position
