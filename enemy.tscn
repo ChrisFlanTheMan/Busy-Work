@@ -26,12 +26,22 @@ shape = SubResource("RectangleShape2D_7bwnp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_t3ec2")
 
-[node name="PointLight2D" type="PointLight2D" parent="Area2D"]
+[node name="PointLight2D-Layer1" type="PointLight2D" parent="Area2D"]
 y_sort_enabled = true
 position = Vector2(0, -1.0842e-19)
-scale = Vector2(0.296875, 0.3125)
+scale = Vector2(0.3, 0.3)
 color = Color(1, 1, 0.270588, 1)
 shadow_enabled = true
+texture = ExtResource("3_xgmvl")
+
+[node name="PointLight2D-Layer2" type="PointLight2D" parent="Area2D"]
+y_sort_enabled = true
+position = Vector2(0, -1.42301e-19)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 1, 0.270588, 1)
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
 texture = ExtResource("3_xgmvl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

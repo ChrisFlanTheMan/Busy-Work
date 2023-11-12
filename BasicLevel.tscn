@@ -1,11 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://40fl6sudxlgv"]
+[gd_scene load_steps=28 format=3 uid="uid://behc0vl57r8uj"]
 
 [ext_resource type="Script" path="res://BasicLevel.gd" id="1_1brv6"]
 [ext_resource type="PackedScene" uid="uid://dtll4y64nibr6" path="res://enemy.tscn" id="2_holq4"]
 [ext_resource type="Texture2D" uid="uid://damaw3e7sethe" path="res://assets/cubicle-wall.png" id="3_w53fw"]
-[ext_resource type="PackedScene" uid="uid://cbuv6ki8mnflh" path="res://cake.tscn" id="4_kedwi"]
+[ext_resource type="PackedScene" uid="uid://ba7givk7x2gs0" path="res://cake.tscn" id="4_kedwi"]
 [ext_resource type="Texture2D" uid="uid://bxnoixkfuyw7b" path="res://assets/Cubicles 4.png" id="4_xqcsy"]
-[ext_resource type="PackedScene" uid="uid://bd4lrl3v2q2ey" path="res://npc.tscn" id="5_ql6i5"]
+[ext_resource type="PackedScene" uid="uid://q7ft7m60wbvk" path="res://npc.tscn" id="5_ql6i5"]
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
@@ -223,6 +223,7 @@ offset_bottom = 480.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
+light_mask = 3
 y_sort_enabled = true
 tile_set = SubResource("TileSet_vjnu6")
 format = 2
