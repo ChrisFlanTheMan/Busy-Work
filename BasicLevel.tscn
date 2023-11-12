@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://7v56m4ajevdy" path="res://assets/Desk.png" id="5_siup8"]
 [ext_resource type="Texture2D" uid="uid://7myahnesrfgk" path="res://assets/Water Cooler small.png" id="5_v2df3"]
 [ext_resource type="Texture2D" uid="uid://deang3rve6ua5" path="res://assets/s ofa.png" id="6_boiow"]
-[ext_resource type="PackedScene" uid="uid://c1ked6845cln8" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
+[ext_resource type="PackedScene" path="res://scenes/heartsContainer.tscn" id="12_bjfi4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m2pew"]
 vertices = PackedVector2Array(-558, -269, 160, -273, 168, 207, -554, 209)
