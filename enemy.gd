@@ -7,10 +7,12 @@ extends npcMovement
 var raycast: RayCast2D
 
 func _ready():
+	super()
 	raycast = RayCast2D.new()
 	add_child(raycast)
 
 func _physics_process(delta):
+	super(delta)
 	var nodes = area2D.get_overlapping_bodies()
 	for node in nodes:
 		if node.is_in_group("Player"):
