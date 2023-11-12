@@ -20,3 +20,9 @@ func _physics_process(delta):
 				var collider = raycast.get_collider()
 				if (collider.is_in_group("Player")):
 					collider.position = spawnPosition.position
+					
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		$Area2D/backtowork.visible = not $Area2D/backtowork.visible
+		$Area2D/nocake.visible = not $Area2D/nocake.visible
+		body.position = spawnPosition.position

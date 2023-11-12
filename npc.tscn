@@ -1,51 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd4lrl3v2q2ey"]
+[gd_scene load_steps=3 format=3 uid="uid://bd4lrl3v2q2ey"]
 
 [ext_resource type="Script" path="res://npcMovement.gd" id="1_2db6n"]
-[ext_resource type="Texture2D" uid="uid://dslghhy6f3s03" path="res://assets/NPC_frontback.png" id="2_7omhv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsetq"]
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ey0g4"]
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lnwu0"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_maggm"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sgcjj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urt8h"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5w1rv"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_ey0g4")
-states/Idle/position = Vector2(349, 99.625)
-states/Walk/node = SubResource("AnimationNodeBlendSpace2D_lnwu0")
-states/Walk/position = Vector2(518, 99.8125)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_maggm"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_sgcjj"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_urt8h")]
-
 [node name="npc" type="CharacterBody2D"]
 script = ExtResource("1_2db6n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NPC"
+editable = false
+context_menu_enabled = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 19)
 shape = SubResource("CapsuleShape2D_tsetq")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_5w1rv")
-anim_player = NodePath("../AnimationPlayer")
-advance_expression_base_node = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, 0)
-
-[node name="Body" type="Sprite2D" parent="."]
-texture = ExtResource("2_7omhv")
-hframes = 4
-vframes = 2
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
