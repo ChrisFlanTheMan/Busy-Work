@@ -23,4 +23,7 @@ func _physics_process(delta):
 				if (collider.is_in_group("Player")):
 					$Area2D/backtowork.visible = not $Area2D/backtowork.visible
 					$Area2D/nocake.visible = not $Area2D/nocake.visible
-					collider.position = spawnPosition.position
+					collider.addSuspicion(delta)
+					if (collider.suspicion > collider.MAX_SUSPICION):
+						collider.position = spawnPosition.position
+						collider.suspicion = 0
